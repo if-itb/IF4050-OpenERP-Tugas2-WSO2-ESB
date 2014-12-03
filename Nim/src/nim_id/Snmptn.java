@@ -6,16 +6,16 @@ public class Snmptn {
 		
 	}
 	
-	public int Cek_kelulusan(String no_pendaftaran){
+	public String Cek_kelulusan(String no_pendaftaran){
 		switch(no_pendaftaran){
 			case "12345":
-				return 1;
+				return no_pendaftaran;
 			case "3456":
-				return 1;
+				return no_pendaftaran;
 			case "5678":
-				return 1;
+				return no_pendaftaran;
 		}
-		return 0;
+		return "Tidak lulus";
 	}
 	
 }
