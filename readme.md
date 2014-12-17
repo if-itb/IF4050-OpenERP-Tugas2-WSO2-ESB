@@ -64,7 +64,7 @@ Now, for the invoicing service we call __*pemrosesan tagihan pembayaran*__. This
 
 The things we do is similar to the image above, we manage the communication between several services that create a function as we explained sections before.
 
-[![Service Orchestration 2](http://4.bp.blogspot.com/-4CZdJhHYSU0/T-iZZMQLs4I/AAAAAAAAAUI/_YR9QL9ZgR8/s1600/Screenshot-2.png)](http://4.bp.blogspot.com/-4CZdJhHYSU0/T-iZZMQLs4I/AAAAAAAAAUI/_YR9QL9ZgR8/s1600/Screenshot-2.png)
+
 
 
 ## Exploration
@@ -73,6 +73,22 @@ There are some trouble creating the sequence in order to prove the chaining func
 
 So in order to simulate the orchestration in ESB, temporarily we create a **service central** module that function to orchestrate our services.
 and use the WSO2 ESB as a proxy.
+
+###Simple Content-Based Routing (CBR) of Messages
+
+Here are our trial on creating a simple message routing using sequence in the ESB. The following will explain about our exploration in Simple Content-Based Routing (CBR) of Messages.
+
+####Environment
+
+we complete these test project within these environment :
+
+- OS : Ubuntu Server 14.04 LTS 64 bit
+- CPU : 4 Core Intel i7
+- RAM : 4 gb
+- HDD : 20gb
+
+####ESB Main Configuration
+[![Service Orchestration 2](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)
 
 
 ## The Team
