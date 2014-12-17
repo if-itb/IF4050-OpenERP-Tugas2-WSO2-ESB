@@ -64,6 +64,9 @@ Now, for the invoicing service we call __*pemrosesan tagihan pembayaran*__. This
 
 The things we do is similar to the image above, we manage the communication between several services that create a function as we explained sections before.
 
+Here is how the chaining sequence we designed for this project, as we explained the scenario above.
+
+[![Service Pendaftaran ITB](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/chaining1.jpg)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/chaining1.jpg)
 
 
 
@@ -88,7 +91,51 @@ we complete these test project within these environment :
 - HDD : 20gb
 
 ####ESB Main Configuration
-[![Service Orchestration 2](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)
+[![Simple 1](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/1.png)
+
+ESB Configuration using filter mediator to route the message received from
+
+	http:/<url>/StockQuote
+	
+to the URI of the real service.
+
+####Back-End Service Deployment
+__(SimpleStockQuote Service)__
+
+- Build SimpleStockQuote Service from 
+
+
+		<wso2_home>/samples/axis2Serversrc/SimpleStockQuoteService/
+	
+	
+	[![Simple 2](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/2.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/2.png)
+
+- Run axis2server.sh
+
+
+		<wso2_home>/samples/axis2Server/
+	
+	[![Simple 3](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/3.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/3.png)
+
+####The Test!
+Now to do so, we run the client by calling
+	
+	ant stockquote - Dtrpurl=http://localhost:8280/services/StockQuote
+	
+from : 
+	
+	<wso2_home>/samples/axis2Client
+	
+__The Result__
+
+Here is what will we get :
+
+[![Simple 4](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/4.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/4.png)
+
+ the port 8280 is the port that used in ESB for ESB HTTP-NIO, this can be known from the configuration file located in
+ `<wso2_home>/repository/conf/axis2/axis2.xml`
+ 
+ [![Simple 5](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/5.png)](https://raw.githubusercontent.com/if-itb/IF4050-OpenERP-Tugas2-WSO2-ESB/master/resources/images/Simple_Content-Based_Routing/5.png)
 
 
 ## The Team
